@@ -102,7 +102,35 @@
 
   <!-- Add the gray bar div -->
   <div id="gray-bar"></div>
-
+  <div id="dynamic-block-content">
+    <div id="content-container">
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -214,6 +242,37 @@
         }
       });
     });
+    
+     const dynamicBlockContent = document.getElementById('dynamic-block-content');
+
+      // Add click event listener to tabs
+      const tabs = document.querySelectorAll('.tab');
+      tabs.forEach(tab => {
+        tab.addEventListener('click', function (event) {
+          event.preventDefault();
+
+          // Get the data-tab attribute value
+          const tabName = this.getAttribute('data-tab');
+
+          // Load content based on the selected tab
+          loadContent(tabName);
+        });
+      });
+
+      // Function to load content based on the selected tab
+      function loadContent(tabName) {
+        // Example: Load content from a file based on the tabName
+        const filePath = `content/${tabName}.html`; // Adjust the path as needed
+
+        // Simulate loading content using fetch
+        fetch(filePath)
+          .then(response => response.text())
+          .then(content => {
+            // Display the content in the dynamic-block-content div
+            dynamicBlockContent.querySelector('#content-container').innerHTML = content;
+          })
+          .catch(error => console.error('Error loading content:', error));
+      }
   </script>
 </body>
 </html>
