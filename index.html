@@ -1,7 +1,170 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Particles.js Background</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 31, 63, 0);
+    }
+
+    #navbar {
+      background: linear-gradient(to right, #0671B7, #67A3B9, #C8E7F5, #F6E2D0, #F8B7ED);
+      opacity: 0;
+      padding: 2px;
+      height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: opacity 0.3s ease-in-out;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    #navbar.show {
+      opacity: .95;
+    }
+    .title {
+      background: none;
+      color: white;
+      text-decoration: none;
+      font-family: 'Oswald', sans-serif;
+      font-size: 24px;
+      position: relative;
+      left: 10px;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+    }
+  </style>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+  <div id="particles-js"></div>
+  <div id="navbar">
+    <div class="title"><h3>Truman Sacco</h3></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      particlesJS('particles-js', {
+        particles: {
+          number: {
+            value: 120,
+            density: {
+              enable: true,
+              value_area: 800
+            }
+          },
+          color: {
+            value: '#0074cc'
+          },
+          shape: {
+            type: 'circle',
+            stroke: {
+              width: 0,
+              color: '#000000'
+            },
+            polygon: {
+              nb_sides: 5
+            }
+          },
+          opacity: {
+            value: 0.5,
+            random: true,
+            anim: {
+              enable: true,
+              speed: 1,
+              opacity_min: 0,
+              sync: false
+            }
+          },
+          size: {
+            value: 4,
+            random: true,
+            anim: {
+              enable: true,
+              speed: 2,
+              size_min: 0,
+              sync: false
+            }
+          },
+          line_linked: {
+            enable: false
+          },
+          move: {
+            enable: true,
+            speed: 1,
+            direction: 'none',
+            random: true,
+            straight: false,
+            out_mode: 'out',
+            bounce: false
+          }
+        },
+        interactivity: {
+          detect_on: 'canvas',
+          events: {
+            onhover: {
+              enable: false,
+              mode: 'repulse'
+            },
+            onclick: {
+              enable: true,
+              mode: 'push'
+            },
+            resize: true
+          },
+          modes: {
+            grab: {
+              distance: 400,
+              line_linked: {
+                opacity: 1
+              }
+            },
+            bubble: {
+              distance: 400,
+              size: 40,
+              duration: 2,
+              opacity: 8,
+              speed: 3
+            },
+            repulse: {
+              distance: 200
+            },
+            push: {
+              particles_nb: 2
+            },
+            remove: {
+              particles_nb: 2
+            }
+          }
+        },
+        retina_detect: true
+      });
+
+      document.addEventListener('mousemove', function (event) {
+        const navbar = document.getElementById('navbar');
+        const mouseY = event.clientY;
+
+        if (mouseY <= window.innerHeight * 0.2) {
+          navbar.classList.add('show');
+        } else {
+          navbar.classList.remove('show');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
