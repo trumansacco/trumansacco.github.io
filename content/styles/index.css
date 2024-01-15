@@ -79,7 +79,7 @@ body, html {
   #dynamic-block-content {
       margin-top: 65px;
       width: 80vw;
-      height: auto;
+      height: 80vh;
       margin: auto;
       margin-top: 60px;
   }
