@@ -82,6 +82,6 @@ body, html {
 
   #content-container {
       width: 80vw;
-      height: 130vh;
+      height: auto;
       margin: auto;
   }

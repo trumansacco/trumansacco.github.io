@@ -1,6 +1,4 @@
 #pdf-container {
       width: 80vw;
-      height: 130vh;
-      margin: auto;
-      margin-top: 80px;
+      height: auto;
 }
