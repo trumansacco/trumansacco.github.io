@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function handleMouseMove(event) {
     const navbar = document.getElementById('navbar');
     const bodyRect = document.body.getBoundingClientRect();
-    const mouseYRelativeToBody = event.clientY - bodyRect.top;
+    const mouseYRelativeToBody = event.screenY;
 
     if (mouseYRelativeToBody > 0) {
       navbar.classList.remove('show');
