@@ -83,3 +83,8 @@ body, html {
       margin: auto;
       margin-top: 60px;
   }
+
+  #content-container {
+    height: 100%;
+    width: auto;
+  }
