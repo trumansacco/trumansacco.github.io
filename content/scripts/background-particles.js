@@ -96,15 +96,5 @@
         retina_detect: true
       });
 
-      document.addEventListener('mousemove', function (event) {
-        const navbar = document.getElementById('navbar');
-        const grayBar = document.getElementById('gray-bar');
-        const mouseY = event.clientY;
-
-        if (mouseY <= window.innerHeight * 0.2) {
-          navbar.classList.add('show');
-        } else {
-          navbar.classList.remove('show');
-        }
-      });
+      
     });
